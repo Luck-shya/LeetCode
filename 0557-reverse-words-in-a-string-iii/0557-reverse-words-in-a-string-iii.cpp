@@ -7,8 +7,8 @@ public:
         for(int i=0;i<ss.size();i++){
             if(ss[i]==' '){
                 reverse(a.begin(),a.end());
+                a+=' ';
                 ans+=a;
-                ans+=' ';
                 a="";
             }
             else{
