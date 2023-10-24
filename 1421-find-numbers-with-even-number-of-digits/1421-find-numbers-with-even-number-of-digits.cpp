@@ -10,8 +10,12 @@ public:
         return count;
     }
     bool even(int a){
-        string s =to_string(a);
-        if(s.size()%2==0){
+        int g=0;
+        while(a>0){
+            g++;
+            a=a/10;
+        }
+        if(g%2==0){
             return true;
         }
         return false;
