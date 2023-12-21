@@ -1,18 +1,16 @@
 class Solution {
 public:
     int maxWidthOfVerticalArea(vector<vector<int>>& points) {
-        vector<int> xaxis;
-        for(auto point : points){
-            xaxis.push_back(point[0]);
+        sort(points.begin(), points.end(), [](const auto& a, const auto& b) {
+            return a[0] < b[0];
+        });
+
+        int maxWidth = 0;
+        for (int i = 1; i < points.size(); ++i) {
+            int diff = points[i][0] - points[i - 1][0];
+            maxWidth = max(maxWidth, diff);
         }
-        sort(xaxis.begin(),xaxis.end());
-        int temp=0;
-        for(int i=1;i<xaxis.size();i++){
-            int diff = xaxis[i]-xaxis[i-1];
-            if(diff>temp){
-                temp=diff;
-            }
-        }
-        return temp;
+
+        return maxWidth;
     }
 };
