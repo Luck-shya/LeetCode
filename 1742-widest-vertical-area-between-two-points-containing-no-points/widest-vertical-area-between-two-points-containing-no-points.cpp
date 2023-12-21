@@ -7,8 +7,7 @@ public:
 
         int maxWidth = 0;
         for (int i = 1; i < points.size(); ++i) {
-            int diff = points[i][0] - points[i - 1][0];
-            maxWidth = max(maxWidth, diff);
+            maxWidth = max(maxWidth, points[i][0] - points[i - 1][0]);
         }
 
         return maxWidth;
