@@ -1,24 +1,17 @@
 class Solution {
 public:
-    int minCost(string colors, vector<int>& neededTime) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-        cout.tie(NULL);
-        int prev = 0;
-        int ans = 0;
-        for(int i = 1; i < colors.size(); i++){
-            if(colors[prev] != colors[i]){
-                prev = i;
-            }
-            else{
-                if(neededTime[prev] < neededTime[i]){
-                    ans += neededTime[prev];
-                    prev=i;
-                }
-                else{
-                    ans += neededTime[i];
-                }
-            }
+
+  
+    int minCost(string &colors, vector<int>& neededTime) {
+        
+      
+        int ans=0;
+        int n=colors.size();
+        for(int i=1;i<n;i++){
+           if(colors[i]==colors[i-1]){
+               ans+=min(neededTime[i],neededTime[i-1]);
+               neededTime[i]=max(neededTime[i],neededTime[i-1]);
+           }
         }
         return ans;
     }
