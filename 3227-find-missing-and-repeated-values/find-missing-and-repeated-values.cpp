@@ -1,14 +1,15 @@
 class Solution {
 public:
     vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
-        int n = grid.size();
+                int n = grid.size();
         std::unordered_map<int, int> countMap;
-        std::unordered_map<int, bool> presentMap;
-
+        std::vector<bool> presentMap(n * n + 1, false); 
         for (const auto& row : grid) {
             for (int val : row) {
-                countMap[val]++;
-                presentMap[val] = true;
+                if (val > 0 && val <= n * n) {
+                    countMap[val]++;
+                    presentMap[val] = true;
+                }
             }
         }
 
