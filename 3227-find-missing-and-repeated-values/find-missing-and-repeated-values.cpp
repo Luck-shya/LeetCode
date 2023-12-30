@@ -7,10 +7,8 @@ public:
 
         for (const auto& row : grid) {
             for (int val : row) {
-                if (val > 0) {
-                    countMap[val]++;
-                    presentMap[val] = true;
-                }
+                countMap[val]++;
+                presentMap[val] = true;
             }
         }
 
