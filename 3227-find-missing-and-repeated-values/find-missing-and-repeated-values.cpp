@@ -6,14 +6,13 @@ public:
         std::vector<bool> presentMap(n * n + 1, false); 
         for (const auto& row : grid) {
             for (int val : row) {
-                if (val > 0 && val <= n * n) {
-                    countMap[val]++;
-                    presentMap[val] = true;
-                }
+                countMap[val]++;
+                presentMap[val] = true;
+                
             }
         }
 
-        std::vector<int> ans;
+        vector<int> ans;
         for (auto p : countMap) {
             if (p.second > 1) {
                 ans.push_back(p.first);
