@@ -1,32 +1,40 @@
+#include <string>
+using namespace std;
+
 class Solution {
 public:
     bool validPalindrome(string s) {
-        int left = 0;
-        int right = s.size() - 1;
         int count = 0;
+        int p1 = 0;
+        int n = s.size();
+        int p2 = n - 1;
 
-        while (left < right) {
-            if (s[left] != s[right]) {
-                if (count == 1) {
-                    return false; 
-                }
-                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
+        while (p1 < p2 && count <= 1) {
+            if (s[p1] != s[p2]) {
+                count++;
+            } else {
+                p2--;
             }
-            left++;
-            right--;
+            p1++;
         }
 
-        return true;
-    }
-
-    bool isPalindrome(string& s, int left, int right) {
-        while (left < right) {
-            if (s[left] != s[right]) {
-                return false;
-            }
-            left++;
-            right--;
+        if (count <= 1) {
+            return true;
         }
-        return true;
+
+        count = 0;
+        p1 = 0;
+        p2 = n - 1;
+
+        while (p1 < p2 && count <= 1) {
+            if (s[p1] != s[p2]) {
+                count++;
+            } else {
+                p1++;
+            }
+            p2--;
+        }
+
+        return count <= 1;
     }
 };
