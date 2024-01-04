@@ -2,7 +2,7 @@ class Solution {
 public:
     string simplifyPath(string path) {
         stringstream ss(path);
-        vector<string> tokens;
+        stack<string> tokens;
         string token;
     
         while (getline(ss, token, '/')) {
@@ -10,16 +10,17 @@ public:
                 continue;
             } else if (token == "..") {
                 if (!tokens.empty()) {
-                    tokens.pop_back();
+                    tokens.pop();
                 }
             } else {
-                tokens.push_back(token);
+                tokens.push(token);
             }
         }
     
         string simplifiedPath = "";
-        for(const string& dir : tokens) {
-            simplifiedPath += "/" + dir;
+        while(!tokens.empty()) {
+            simplifiedPath = "/" + tokens.top() +simplifiedPath;
+            tokens.pop();
         }
     
         return simplifiedPath.empty() ? "/" : simplifiedPath;
