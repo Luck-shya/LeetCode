@@ -1,19 +1,29 @@
+static const int _ = [](){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 0;
+}();
 class Solution {
 public:
     int minOperations(vector<int>& nums) {
-        unordered_map<int, int> cnt;
-        for (int num : nums) {
-            cnt[num]++;
-        }   
-        int ans = 0;
-        for(auto [_,c] :cnt){
-            if(c==1){
-                return -1;
-            }
-            ans +=ceil((double)(c)/3);
+        unordered_map<int, int> counts;
+        int second;
+        int result = 0;
+        for(auto i: nums){
+            counts[i]++;
         }
-        return ans;
-
+        for(auto i : counts){
+            second = i.second;
+            if(second == 1) return -1;
+            if(second % 3 == 1){
+                result += (second/3) - 1;
+                result += 2;
+            }else{
+                result += (second/3);
+                result += ((second%3)/2);
+            }
+        }
+        return result;
     }
-    
 };
