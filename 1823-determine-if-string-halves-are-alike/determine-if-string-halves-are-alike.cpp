@@ -1,28 +1,22 @@
 class Solution {
 public:
     bool halvesAreAlike(string s) {
-        int half = s.size()/2;
-        string a,b;
-        for(int i=0;i<half;i++){
-            a+=s[i];
+        int cnt = 0,n = s.size();
+        transform(s.begin(), s.end(), s.begin(), ::tolower); 
+        for(int  i = 0;i<n;i++)
+        {
+            if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+                cnt++;
         }
-        for(int i=half;i<s.size();i++){
-            b+=s[i];
+        int c = 0;
+        for(int i = 0;i<n/2;i++)
+        {
+            if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+                c++;
         }
-        int vow_a=0,vow_b=0;
-        for(int i=0;i<half;i++){
-            if(a[i]=='a'|| a[i]=='e'||a[i]== 'i'||a[i]== 'o'|| a[i]=='u'||a[i]== 'A'|| a[i]=='E' 
-            || a[i]=='I'||a[i]== 'O'|| a[i]=='U'){
-                vow_a++;
-            }
-            if(b[i]=='a'|| b[i]=='e'||b[i]== 'i'||b[i]== 'o'|| b[i]=='u'||b[i]== 'A'|| b[i]=='E' 
-            || b[i]=='I'||b[i]== 'O'|| b[i]=='U'){
-                vow_b++;
-            }
-        }
-        if(vow_a==vow_b){
+        if(2*c==cnt)
             return true;
-        }
-        return false;
+        else
+            return false;
     }
 };
