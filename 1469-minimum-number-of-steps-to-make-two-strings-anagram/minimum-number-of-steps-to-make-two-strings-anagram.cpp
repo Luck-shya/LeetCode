@@ -3,16 +3,22 @@
 
 class Solution {
 public:
-    int minSteps(std::string s, std::string t) {
-        unordered_map<char, int> freq;
-        int pos=0;
-        for (int i = 0; i < s.size(); i++) {
-            freq[s[i]]--;
-            freq[t[i]]++;
+    int minSteps(const std::string& s, const std::string& t) {
+        std::unordered_map<char, int> freq;
+
+        for (char ch : s) {
+            freq[ch]--;
         }
-        for(auto it = freq.begin();it!=freq.end();++it){
-            pos+=abs(it->second);
+
+        for (char ch : t) {
+            freq[ch]++;
         }
-        return pos/2;
+
+        int pos = 0;
+        for (const auto& pair : freq) {
+            pos += std::abs(pair.second);
+        }
+
+        return pos / 2;
     }
 };
