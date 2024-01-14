@@ -1,12 +1,13 @@
 class Solution {
 public:
     bool closeStrings(string word1, string word2) {
-        if (word1.size() != word2.size()) {
-            return false; // Strings must be of equal length to be considered "close"
-        }
-
         unordered_map<char, int> freq1, freq2;
         unordered_set<char> chars1, chars2;
+        int n =word1.size();
+        int m=word2.size();
+        if(n!=m){
+            return false;
+        }
 
         for (char c : word1) {
             freq1[c]++;
@@ -17,20 +18,27 @@ public:
             freq2[c]++;
             chars2.insert(c);
         }
-
-        // Check if the sets of characters are the same
         if (chars1 != chars2) {
             return false;
         }
-
-        // Check if the character frequencies are the same
         vector<int> freqCount1, freqCount2;
-        transform(freq1.begin(), freq1.end(), back_inserter(freqCount1), [](const auto& p) { return p.second; });
-        transform(freq2.begin(), freq2.end(), back_inserter(freqCount2), [](const auto& p) { return p.second; });
+        for (auto& pair : freq1) {
+            freqCount1.push_back(pair.second);
+        }
+        int p=freqCount1.size();
+
+        for (auto& pair : freq2) {
+            freqCount2.push_back(pair.second);
+        }
 
         sort(freqCount1.begin(), freqCount1.end());
         sort(freqCount2.begin(), freqCount2.end());
 
-        return freqCount1 == freqCount2;
+        for(int i=0;i<p;i++){
+            if(freqCount1[i]!=freqCount2[i]){
+                return false;
+            }
+        }
+        return true;
     }
 };
