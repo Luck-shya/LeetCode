@@ -10,10 +10,12 @@ private:
 
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
-        sort(piles.begin(), piles.end());
+        cout.tie(0);
+        cin.tie(0);
+        ios_base::sync_with_stdio(0);
         int low = 1;
         long long totalhours;  // Change the type to long long
-        int high = piles.back();
+        int high = *max_element(piles.begin(),piles.end());
         int ans = INT_MAX;
 
         if (piles.size() == h) return high;
