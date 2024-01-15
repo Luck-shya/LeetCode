@@ -3,30 +3,24 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int lowr = 0, highr = matrix.size() - 1;
+        int rows = matrix.size();
+        if (rows == 0) {
+            return false;
+        }
 
-        while (lowr <= highr) {
-            int midr = lowr + (highr - lowr) / 2;
-            int lowc = 0;
-            int highc = matrix[midr].size() - 1;
+        int cols = matrix[0].size();
+        int low = 0, high = rows * cols - 1;
 
-            if (matrix[midr][lowc] <= target && target <= matrix[midr][highc]) {
-                // Perform binary search within the row
-                while (lowc <= highc) {
-                    int midc = lowc + (highc - lowc) / 2;
-                    if (matrix[midr][midc] == target) {
-                        return true;
-                    } else if (matrix[midr][midc] < target) {
-                        lowc = midc + 1;
-                    } else {
-                        highc = midc - 1;
-                    }
-                }
-                return false;  // Target not found in the current row
-            } else if (matrix[midr][lowc] < target) {
-                lowr = midr + 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int midVal = matrix[mid / cols][mid % cols];
+
+            if (midVal == target) {
+                return true;
+            } else if (midVal < target) {
+                low = mid + 1;
             } else {
-                highr = midr - 1;
+                high = mid - 1;
             }
         }
 
