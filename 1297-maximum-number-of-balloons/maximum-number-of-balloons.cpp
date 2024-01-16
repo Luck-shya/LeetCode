@@ -1,21 +1,20 @@
+#define CHAR_COUNT 26
+
 class Solution {
 public:
     int maxNumberOfBalloons(string text) {
-        unordered_map<char, int> bl;
-        for (char a : text) {
-            bl[a]++;
+        int b = 0, a = 0, l = 0, o = 0, n = 0;
+        for (auto& c : text) {
+            switch (c) {
+                case 'b': ++b; break;
+                case 'a': ++a; break;
+                case 'l': ++l; break;
+                case 'o': ++o; break;
+                case 'n': ++n; break;
+            }
         }
-
-        int count = 0;
-        while (bl['a'] >= 1 && bl['b'] >= 1 && bl['n'] >= 1 && bl['l'] >= 2 && bl['o'] >= 2) {
-            bl['a']--;
-            bl['b']--;
-            bl['n']--;
-            bl['l'] -= 2;
-            bl['o'] -= 2;
-            count++;
-        }
-
-        return count;
+        l /= 2;
+        o /= 2;
+        return min({b, a, l, o, n});
     }
 };
