@@ -1,45 +1,33 @@
 class CustomStack {
-private:
-    stack<int> s;
-    int maxSize;
-
+    int size;
+    vector<int> arr;
 public:
-    CustomStack(int maxSize) : maxSize(maxSize) {
-        // Constructor logic here, if any
+    CustomStack(int maxSize) {
+       size = maxSize;
     }
-
+    
     void push(int x) {
-        if (s.size() < maxSize) {
-            s.push(x);
-        }
+        if(arr.size() < size)
+            arr.push_back(x);
     }
-
+    
     int pop() {
-        if (s.empty()) {
+        if(arr.size() == 0)
             return -1;
+        else{
+            int res=arr.back();
+            arr.pop_back();
+            return res;
         }
-        int result = s.top();
-        s.pop();
-        return result;
-    }
-
-    void increment(int k, int val) {
-        int n = s.size();
-        vector<int> temp;
         
-        while (n > k) {
-            temp.push_back(s.top());
-            s.pop();
-            n--;
-        }
-
-        while (!s.empty()) {
-            temp.push_back(s.top() + val);
-            s.pop();
-        }
-
-        for (int i = temp.size() - 1; i >= 0; i--) {
-            s.push(temp[i]);
+    }
+    
+    void increment(int k, int val) {
+        int x = k;
+        if(arr.size() < k)
+            x = arr.size();
+        for(int i=0; i < x; i++){
+            arr[i] += val;
         }
     }
 };
