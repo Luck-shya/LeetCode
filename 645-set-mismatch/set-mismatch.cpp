@@ -1,12 +1,9 @@
-#include <vector>
-
 class Solution {
 public:
     std::vector<int> findErrorNums(std::vector<int>& nums) {
         int duplicate = -1, missing = -1;
         int n = nums.size();
 
-        // Find the duplicate number using cyclic sort
         for (int i = 0; i < n; ++i) {
             while (nums[i] != i + 1) {
                 if (nums[i] == nums[nums[i] - 1]) {
@@ -17,7 +14,7 @@ public:
             }
         }
 
-        // Find the missing number
+        // Calculate missing number
         for (int i = 0; i < n; ++i) {
             if (nums[i] != i + 1) {
                 missing = i + 1;
