@@ -1,21 +1,30 @@
+#include <vector>
+
 class Solution {
 public:
     std::vector<int> findErrorNums(std::vector<int>& nums) {
-        unordered_map<int,int> s;
-        int duplicate;
-        int missing;
-        int curr=0;
-        int n=nums.size();
-        for(int i=0;i<n;i++){
-            s[nums[i]]++;
-            curr+=nums[i];
-            if(s[nums[i]]>1){
-                duplicate = nums[i];
+        int duplicate = -1, missing = -1;
+        int n = nums.size();
+
+        // Find the duplicate number using cyclic sort
+        for (int i = 0; i < n; ++i) {
+            while (nums[i] != i + 1) {
+                if (nums[i] == nums[nums[i] - 1]) {
+                    duplicate = nums[i];
+                    break;
+                }
+                std::swap(nums[i], nums[nums[i] - 1]);
             }
         }
-        int sum = n* (n+1)/2;
-        int m = sum-curr;
-        missing = duplicate + m;
-        return {duplicate,missing};
+
+        // Find the missing number
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] != i + 1) {
+                missing = i + 1;
+                break;
+            }
+        }
+
+        return {duplicate, missing};
     }
 };
