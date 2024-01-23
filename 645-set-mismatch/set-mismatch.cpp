@@ -1,27 +1,18 @@
 class Solution {
-public:
-    std::vector<int> findErrorNums(std::vector<int>& nums) {
-        int duplicate = -1, missing = -1;
-        int n = nums.size();
+ public:
+  vector<int> findErrorNums(vector<int>& nums) {
+    int duplicate;
 
-        for (int i = 0; i < n; ++i) {
-            while (nums[i] != i + 1) {
-                if (nums[i] == nums[nums[i] - 1]) {
-                    duplicate = nums[i];
-                    break;
-                }
-                std::swap(nums[i], nums[nums[i] - 1]);
-            }
-        }
+    for (const int num : nums)
+      if (nums[abs(num) - 1] < 0)
+        duplicate = abs(num);
+      else
+        nums[abs(num) - 1] *= -1;
 
-        // Calculate missing number
-        for (int i = 0; i < n; ++i) {
-            if (nums[i] != i + 1) {
-                missing = i + 1;
-                break;
-            }
-        }
+    for (int i = 0; i < nums.size(); ++i)
+      if (nums[i] > 0)
+        return {duplicate, i + 1};
 
-        return {duplicate, missing};
-    }
+    throw;
+  }
 };
