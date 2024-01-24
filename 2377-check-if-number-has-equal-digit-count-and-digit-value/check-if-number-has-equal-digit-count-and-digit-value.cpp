@@ -3,15 +3,14 @@
 
 class Solution {
 public:
-    bool digitCount(string num) {
-        map<char, int> count;
-
-        for (char c : num) {
-            count[c]++;
-        }
+    bool digitCount(const std::string& num) {
+        unordered_map<char, int> digitCount;
 
         for (int i = 0; i < num.size(); i++) {
-            if (count[i + '0'] != (num[i] - '0')) {
+            digitCount[num[i]]++;
+        }
+        for (int i = 0; i < num.size(); i++) {
+            if (digitCount[i+'0'] != (num[i] - '0' )) {
                 return false;
             }
         }
