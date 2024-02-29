@@ -6,18 +6,18 @@ public:
         int high=n-1;
         while(low<=high)
         {
-        if(numbers[low]+numbers[high]==target)
-        {
-            return {low+1,high+1};
-        }
-        else if(numbers[low]+numbers[high]>target)
-        {   
-            high--;
-        }
-        else
-        {
-            low++ ;
-        }
+            if(numbers[low]+numbers[high]==target)
+            {
+                return {low+1,high+1};
+            }
+            else if(numbers[low]+numbers[high]>target)
+            {    
+                high--;
+            }
+            else
+            {
+                low++ ;
+            }
         }
         return {};
     }
