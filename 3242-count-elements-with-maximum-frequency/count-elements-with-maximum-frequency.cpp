@@ -1,15 +1,16 @@
 class Solution {
 public:
     int maxFrequencyElements(vector<int>& nums) {
-        int maxNum = *max_element(nums.begin(), nums.end());
-        vector<int> freq(maxNum + 1, 0);
-        for(int num : nums){
-            freq[num]++;
+        int freq[101]={0}, maxF=0;
+        for (int x: nums){
+            freq[x]++;
+            maxF=max(maxF, freq[x]);
         }
-        sort(freq.begin(), freq.end(), greater<int>());
-        
-        int maxFreq = freq[0]; // Maximum frequency
-        int maxFreqCount = count(freq.begin(), freq.end(), maxFreq); // Count of elements with maximum frequency
-        return maxFreq * maxFreqCount;
+        int ans=0;
+        for (int f: freq){
+            if (f==maxF)
+                ans+=f;
+        }
+        return ans;
     }
 };
