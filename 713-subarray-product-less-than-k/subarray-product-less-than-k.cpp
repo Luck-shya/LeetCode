@@ -1,6 +1,13 @@
 class Solution {
 public:
+
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        auto initialize = []() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 0;
+}();
         if (k <= 1) return 0; // If k <= 1, no subarray will satisfy the condition
         
         int product = 1;
