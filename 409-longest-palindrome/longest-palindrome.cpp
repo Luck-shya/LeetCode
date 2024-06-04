@@ -5,7 +5,7 @@ public:
         unordered_map<char, int> charFrequency;
         for (char ch : s) {
             charFrequency[ch]++;
-            if (charFrequency[ch] % 2 == 1)
+            if (charFrequency[ch] & 1)
                 oddFrequencyCount++;
             else
                 oddFrequencyCount--;
