@@ -13,16 +13,19 @@ This is a repository to maintain my Leetcode progress .
 # Array
 |  |
 | ------- |
+| [0648-replace-words](https://github.com/Luck-shya/LeetCode/tree/master/0648-replace-words) |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 # Hash Table
 |  |
 | ------- |
+| [0648-replace-words](https://github.com/Luck-shya/LeetCode/tree/master/0648-replace-words) |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 # String
 |  |
 | ------- |
+| [0648-replace-words](https://github.com/Luck-shya/LeetCode/tree/master/0648-replace-words) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 # Greedy
 |  |
@@ -32,3 +35,7 @@ This is a repository to maintain my Leetcode progress .
 |  |
 | ------- |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
+# Trie
+|  |
+| ------- |
+| [0648-replace-words](https://github.com/Luck-shya/LeetCode/tree/master/0648-replace-words) |
