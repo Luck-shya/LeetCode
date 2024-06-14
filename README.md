@@ -15,6 +15,7 @@ This is a repository to maintain my Leetcode progress .
 | ------- |
 | [0648-replace-words](https://github.com/Luck-shya/LeetCode/tree/master/0648-replace-words) |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
 # Hash Table
@@ -33,10 +34,12 @@ This is a repository to maintain my Leetcode progress .
 |  |
 | ------- |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 # Sorting
 |  |
 | ------- |
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
 # Trie
 |  |
@@ -45,4 +48,5 @@ This is a repository to maintain my Leetcode progress .
 # Counting Sort
 |  |
 | ------- |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
