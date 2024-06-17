@@ -9,6 +9,7 @@ This is a repository to maintain my Leetcode progress .
 # Two Pointers
 |  |
 | ------- |
+| [0633-sum-of-square-numbers](https://github.com/Luck-shya/LeetCode/tree/master/0633-sum-of-square-numbers) |
 | [0908-middle-of-the-linked-list](https://github.com/Luck-shya/LeetCode/tree/master/0908-middle-of-the-linked-list) |
 # Array
 |  |
@@ -50,3 +51,11 @@ This is a repository to maintain my Leetcode progress .
 | ------- |
 | [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
+# Math
+|  |
+| ------- |
+| [0633-sum-of-square-numbers](https://github.com/Luck-shya/LeetCode/tree/master/0633-sum-of-square-numbers) |
+# Binary Search
+|  |
+| ------- |
+| [0633-sum-of-square-numbers](https://github.com/Luck-shya/LeetCode/tree/master/0633-sum-of-square-numbers) |
