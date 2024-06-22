@@ -21,6 +21,7 @@ This is a repository to maintain my Leetcode progress .
 | [0982-minimum-increment-to-make-array-unique](https://github.com/Luck-shya/LeetCode/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
+| [1370-count-number-of-nice-subarrays](https://github.com/Luck-shya/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 # Hash Table
 |  |
 | ------- |
@@ -28,6 +29,7 @@ This is a repository to maintain my Leetcode progress .
 | [0876-hand-of-straights](https://github.com/Luck-shya/LeetCode/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/Luck-shya/LeetCode/tree/master/1044-find-common-characters) |
 | [1217-relative-sort-array](https://github.com/Luck-shya/LeetCode/tree/master/1217-relative-sort-array) |
+| [1370-count-number-of-nice-subarrays](https://github.com/Luck-shya/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 # String
 |  |
 | ------- |
@@ -59,8 +61,13 @@ This is a repository to maintain my Leetcode progress .
 |  |
 | ------- |
 | [0633-sum-of-square-numbers](https://github.com/Luck-shya/LeetCode/tree/master/0633-sum-of-square-numbers) |
+| [1370-count-number-of-nice-subarrays](https://github.com/Luck-shya/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 # Binary Search
 |  |
 | ------- |
 | [0633-sum-of-square-numbers](https://github.com/Luck-shya/LeetCode/tree/master/0633-sum-of-square-numbers) |
 | [0853-most-profit-assigning-work](https://github.com/Luck-shya/LeetCode/tree/master/0853-most-profit-assigning-work) |
+# Sliding Window
+|  |
+| ------- |
+| [1370-count-number-of-nice-subarrays](https://github.com/Luck-shya/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
