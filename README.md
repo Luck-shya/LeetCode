@@ -71,3 +71,7 @@ This is a repository to maintain my Leetcode progress .
 |  |
 | ------- |
 | [1370-count-number-of-nice-subarrays](https://github.com/Luck-shya/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
+# Graph
+|  |
+| ------- |
+| [1916-find-center-of-star-graph](https://github.com/Luck-shya/LeetCode/tree/master/1916-find-center-of-star-graph) |
