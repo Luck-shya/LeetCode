@@ -11,20 +11,24 @@
 class Solution {
 public:
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
-       ListNode* current = head;
+        if (!head || !head->next) return head; // No operation if the list has less than 2 nodes
+        
+        ListNode* prev = head;
+        ListNode* curr = head->next;
 
-    while (current != NULL && current->next != NULL) {
-        int gcdValue = __gcd(current->val, current->next->val);
-        ListNode* gcdNode = new ListNode(gcdValue);
+        while (curr != NULL) {
+            int gcdValue = __gcd(prev->val, curr->val);
+            ListNode* gcdNode = new ListNode(gcdValue);
+            
+            // Insert the new node between prev and curr
+            prev->next = gcdNode;
+            gcdNode->next = curr;
+            
+            // Move to the next pair of nodes
+            prev = curr;
+            curr = curr->next;
+        }
         
-        // Insert the new node between current and current->next
-        gcdNode->next = current->next;
-        current->next = gcdNode;
-        
-        // Move to the next pair of nodes
-        current = gcdNode->next;
-    }
-    
-    return head;
+        return head;
     }
 };
